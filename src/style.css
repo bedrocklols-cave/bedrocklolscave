@@ -14,10 +14,6 @@
     grid-template-columns: 240px minmax(0, 1fr);
 }
 
-p, h1, h2, h3 {
-    margin: 0;
-}
-
 header, main, aside, footer {
     background-color: #8c8c8c;
 }
