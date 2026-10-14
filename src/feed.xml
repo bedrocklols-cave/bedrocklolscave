@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+
+  <channel>
+    <title>bedrocklol's cave!</title>
+    <link>https://bedrocklolscave.neocities.org/</link>
+    <language>en</language>
+    <description>A feed for my site updates, such as new blog posts, artworks, game maps, etc.</description>
+    <image> <!-- Feed image -->
+      <url>https://bedrocklolscave.neocities.org/site_files/assets/homepage-favicon.png</url>
+      <title>bedrocklol's cave!</title>
+      <link>https://bedrocklolscave.neocities.org/</link>
+    </image>
+    <item>
+      <title>My new game: Molly Clicker!</title>
+      <link>https://bedrocklolscave.neocities.org/projects#games</link>
+      <description>Molly Clicker is just a simple clicker game made in HTML, CSS, and JavaScript. It is inspired by Orteil and Opti's Cookie Clicker (not to be confused with my OC, Cookie).</description>
+      <pubDate>Fri, 28 Aug 2026 13:35:00 +0800</pubDate>
+      <enclosure url="https://bedrocklolscave.neocities.org/projects/molly-clicker.PNG" length="244044" type="image/png" />
+      <category>Gaming</category>
+      <category>JavaScript</category>
+      <guid isPermaLink="false">article-0011</guid>
+    </item>
+    <item>
+      <title>Mommy Molly</title>
+      <link>https://bedrocklolscave.neocities.org/gallery/nsfw_gallery#digital-artworks</link>
+      <description>Mommy- I mean, Molly?</description>
+      <pubDate>Wed, 26 Aug 2026 11:45:00 +0800</pubDate>
+      <enclosure url="https://bedrocklolscave.neocities.org/gallery/nsfw/digital/Mommy%20Molly.png" length="1719439" type="image/png" />
+      <category>Art</category>
+      <category>NSFW</category>
+      <category>Digital Art</category>
+      <guid isPermaLink="false">article-0010</guid>
+    </item>
+    <item>
+      <title>Flame of The Woods</title>
+      <link>https://bedrocklolscave.neocities.org/gallery#photography</link>
+      <description>I always see these flowers in the Philippines, no matter where I go. This could go hard for a wallpaper.</description>
+      <pubDate>Wed, 26 Aug 2026 11:45:00 +0800</pubDate>
+      <enclosure url="https://bedrocklolscave.neocities.org/gallery/sfw/photography/Flame%20of%20The%20Woods.jpg" length="1588856" type="image/jpg" />
+      <category>Art</category>
+      <category>Photography</category>
+      <guid isPermaLink="false">article-0009</guid>
+    </item>
+    <item>
+      <title>August 26, 2026 | 11:36am</title>
+      <link>https://bedrocklolscave.neocities.org/blog/microblog#article-0010</link>
+      <description>Recently in the Philippines, we got hit by 4 typhoons in a row. It was genuinely crazy, like it rained non-stop for 2 weeks! The flood was almost chest deep at its peak. And I have been doing online classes for almost 3 weeks now. Midterm is just gone like that lol, oh yeah, I have exams in upcoming September.</description>
+      <pubDate>Wed, 26 Aug 2026 11:36:00 +0800</pubDate>
+      <category>Blog</category>
+      <category>Update</category>
+      <guid isPermaLink="false">article-0008</guid>
+    </item>
+    <item>
+      <title>Making my website have more semantic html.</title>
+      <link>https://bedrocklolscave.neocities.org/#changelog</link>
+      <description>Working on updating bedrocklol's cave to version 1.4.3 was draining, but I've finally done it! Most of it was on making my HTML much more readable to both people and robots. I've also updated the themes a little bit.</description>
+      <pubDate>Thu, 20 Aug 2026 14:02:00 +0800</pubDate>
+      <category>Tech</category>
+      <category>Site Update</category>
+      <guid isPermaLink="false">article-0007</guid>
+    </item>
+    <item>
+      <title>Foodie Duos</title>
+      <link>https://bedrocklolscave.neocities.org/gallery</link>
+      <description>My little sister insisted that we also do a collab art together. The difference in artstyles is kinda noticeable lol.</description>
+      <pubDate>Wed, 12 Aug 2026 18:12:00 +0800</pubDate>
+      <enclosure url="https://bedrocklolscave.neocities.org/gallery/sfw/digital/Foodie%20Duos.png" length="2887787" type="image/png" />
+      <category>Art</category>
+      <category>Digital Art</category>
+      <guid isPermaLink="false">article-0006</guid>
+    </item>
+    <item>
+      <title>Eepy Cookie</title>
+      <link>https://bedrocklolscave.neocities.org/gallery</link>
+      <description>Made this for a collab with my classmate.</description>
+      <pubDate>Wed, 12 Aug 2026 18:07:00 +0800</pubDate>
+      <enclosure url="https://bedrocklolscave.neocities.org/gallery/sfw/digital/Eepy%20Cookie.png" length="312566" type="image/png" />
+      <category>Art</category>
+      <category>Digital Art</category>
+      <guid isPermaLink="false">article-0005</guid>
+    </item>
+    <item>
+      <title>A little sorting of files again.</title>
+      <link>https://bedrocklolscave.neocities.org/</link>
+      <description>I moved the NSFW Gallery html file to the gallery directory. I also did the same for the Microblog html file to the blog directory instead. bedrocklol out.</description>
+      <pubDate>Fri, 7 Aug 2026 15:52:00 +0800</pubDate>
+      <category>Tech</category>
+      <category>Site Update</category>
+      <guid isPermaLink="false">article-0004</guid>
+    </item>
+    <item>
+      <title>RSS Feed is now on the homepage!</title>
+      <link>https://bedrocklolscave.neocities.org/</link>
+      <description>I decided to replace the old blog feed from the homepage into this website's RSS feed. I used RSS 2 HTML to embed the XML file! You'll need a news aggregator to see the pictures though. That's pretty much it. bedrocklol out!</description>
+      <pubDate>Thu, 6 Aug 2026 15:57:00 +0800</pubDate>
+      <category>Tech</category>
+      <category>Site Update</category>
+      <guid isPermaLink="false">article-0003</guid>
+    </item>
+    <item>
+      <title>Test post</title>
+      <link>https://bedrocklolscave.neocities.org/</link>
+      <description>This is a test post. Ignore this lol</description>
+      <enclosure url="https://bedrocklolscave.neocities.org/site_files/assets/Molly.jpg" length="1285191" type="image/jpg" />
+      <pubDate>Thu, 6 Aug 2026 11:37:00 +0800</pubDate>
+      <category>Test</category>
+      <guid isPermaLink="false">article-0002</guid>
+    </item>
+    <item>
+      <title>Confident Flaming Ball</title>
+      <link>https://bedrocklolscave.neocities.org/gallery</link>
+      <description>Got a better picture of this place.</description>
+      <enclosure url="https://bedrocklolscave.neocities.org/gallery/sfw/photography/Confident%20flaming%20ball.jpg" length="2094603" type="image/jpg" />
+      <pubDate>Mon, 3 Aug 2026 13:16:00 +0800</pubDate>
+      <category>Art</category>
+      <category>Photography</category>
+      <guid isPermaLink="false">article-0001</guid>
+    </item>
+    <!--
+    <item>
+      <title>Title here</title>
+      <link>https://bedrocklolscave.neocities.org/</link>
+      <description>Description here</description>
+      <pubDate>Mon, 3 Aug 2026 13:16:00 +0800</pubDate>
+      <enclosure url="" length="" type="" />
+      <category>Category</category>
+      <guid isPermaLink="false">article-0000</guid>
+    </item>
+    -->
+  </channel>
+  
+</rss>
