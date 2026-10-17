@@ -23,6 +23,10 @@
     box-sizing: border-box;
 }
 
+#navbar-button {
+    display: none;
+}
+
 body {
     background-color: var(--bg-alt);
     background-image: url('/assets/background.png');
@@ -73,6 +77,7 @@ aside {
 
 footer {
     grid-area: footer;
+    text-align: center;
 }
 
 /* mobile layout */
@@ -89,11 +94,16 @@ footer {
             "navbar navbar"
             "footer footer";
     }
+
+    #navbar-button {
+        display: block;
+    }
 }
 
 /* general */
 h1, h2, h3, h4 {
     font-family: aleo;
+    margin: 16px 0;
 }
 
 h1 {
@@ -101,7 +111,21 @@ h1 {
     border: 1px dashed var(--border-alt);
     text-align: center;
     font-size: 2.8em;
-    margin: 16px 0;
+}
+
+p {
+    margin: 12px 0;
+}
+
+#navbar-button {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-main);
+    padding: 4px;
+    margin: 8px 0;
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    left: 4;
 }
 
 .portrait {
@@ -117,10 +141,23 @@ aside h3 {
     background-color: var(--bg-alt);
     background-image: url('/assets/background.png');
     border: 1px dotted var(--border-alt);
+    border-radius: 4px;
+}
+
+footer a {
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 a, img, marquee {
     color: var(--text-alt);
+}
+
+iframe {
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--border-alt);
+    border-radius: 8px;
 }
 
 a:active {
@@ -129,10 +166,17 @@ a:active {
 
 nav li {
     margin: 8px 0;
+    list-style-type: circle;
+    list-style-image: url('/assets/navigator-list-icon.gif');
 }
 
 hr {
     border: 1px dashed var(--border-alt);
+}
+
+marquee {
+    border: 1px solid var(--border-alt);
+    background-color: var(--bg-alt);
 }
 
 .wrapper, .project, .gallery {
@@ -145,23 +189,37 @@ hr {
 
 .gallery {
     display: flex;
+    height: 332px;
     padding: 8px 4px;
 }
 
-.gallery img {
-    padding-left: 4px;
-    padding-right: 4px;
+.gallery img, .project img {
+    padding: 0 4px;
     border-radius: 8px;
+    height: 100%;
+    width: auto;
 }
 
-.websites {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 8px;
+.project img {
+    width: 80%;
+    border: 1px solid var(--border-alt);
 }
 
-.webrings {
+.project {
     text-align: center;
-    margin: 16px auto;
+}
+
+.project h3 {
+    font-size: 2em;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--bg-main);
+    margin: 8px 0;
+    padding: 8px;
+    font-size: 1.2em;
+    border: 1px solid var(--border-main);
+    border-radius: 8px;
+    text-decoration: none;
 }

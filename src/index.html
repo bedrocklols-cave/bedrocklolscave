@@ -9,9 +9,37 @@
         <link rel="alternate" type="application/rss+xml" title="bedrocklol's RSS Feed" href="feed.xml">
         <link rel="stylesheet" type="text/css" href="/style.css">
         <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+        <style>
+            .feed-title {
+                text-align: center;
+                font-size: 1.4em;
+            }
+
+            .websites {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                padding: 8px;
+            }
+
+            .webrings {
+                text-align: center;
+                margin: 16px auto;
+            }
+
+            .wrapper iframe {
+                height: 312px;
+            }
+
+            #rss {
+                height: 400px;
+                overflow: auto;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
+            <a href="#sidebar" id="navbar-button" aria-label="jump-to-navbar">Navbar</a>
             <header>
                 <h1>bedrocklol's cave!</h1>
             </header>
@@ -32,7 +60,7 @@
                     <h2>RSS Feed</h2>
                     <hr>
                     <p>This is where you will be able to see new blogs, and artworks. Get a news aggregator to follow my feed, such as Feedly.</p>
-                    <div class="wrapper">
+                    <div class="wrapper" id="rss">
                         <script async src="https://rss.bloople.net/?url=https%3A%2F%2Fbedrocklolscave.neocities.org%2Ffeed.xml&showicon=true&forceutf8=true&type=js"></script>
                     </div>
                 </section>
@@ -57,8 +85,9 @@
                     <div class="project">
                         <img src="projects/bedrocklolscave.webp" alt="bedrocklol's cave" height="333" width="564">
                         <h3>bedrocklol's cave</h3>
-                        <p>This is my personal website, used to showcase my artworks, projects, and more. Available on Neocities and GitHub</p>
-                        <a href="https://github.com/bedrocklols-cave/bedrocklolscave">Visit GitHub</a>
+                        <hr>
+                        <p>This is my personal website; used to showcase my artworks, projects, and more. Available on Neocities and GitHub!</p>
+                        <a class="button" href="https://github.com/bedrocklols-cave/bedrocklolscave">Visit GitHub</a>
                     </div>
                 </section>
                 <section>
@@ -66,11 +95,11 @@
                     <hr>
                     <p>And here, you can find all of the website's update notes. Now that I think about it, this list is gonna get even longer the more I update this... Enjoy scrolling lol!</p>
                     <div class="wrapper">
-                        <iframe src="changelog.html" title="bedrocklol's cave update logs" frameborder="0" allowfullscreen="true" height="400" width="600"></iframe>
+                        <iframe src="changelog.html" title="bedrocklol's cave update logs" frameborder="0" height="312" width="300"></iframe>
                     </div>
                 </section>
             </main>
-            <aside>
+            <aside id="sidebar">
                 <img src="/assets/Molly.webp" alt="Molly portrait" class="portrait" height="150" width="150">
                 <img src="/assets/Molly-blinkie.gif" alt="Molly blinkie" class="portrait" height="22" width="150">
                 <hr style="border-style: solid; border-color: var(--border-main);">
@@ -148,7 +177,10 @@
                     <a href="/feed.xml">RSS Feed</a>
                     <a href="#">Resources</a>
                 </nav>
-                <marquee>*-==-*@-=-| bedrocklol's cave |-=-@*-==-*</marquee>
+                <hr>
+                <marquee>
+                    *-==-*@-=-| bedrocklol's cave |-=-@*-==-*
+                </marquee>
             </footer>
         </div>
     </body>
