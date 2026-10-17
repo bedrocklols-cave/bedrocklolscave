@@ -1,3 +1,3 @@
 # bedrocklol's cave!
 
-This is my official website. It's currently undergoing a massive revamp!
+This is my personal website; used to showcase my artworks, projects, and more. Available on Neocities and GitHub!
