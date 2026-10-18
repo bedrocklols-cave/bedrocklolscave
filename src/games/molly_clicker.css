@@ -1,31 +1,48 @@
 @font-face {
     font-family: Aleo;
-    src: url('../../site_files/fonts/Aleo/static/Aleo-Regular.ttf');
+    src: url('/fonts/Aleo-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: fredoka;
+    src: url('/fonts/Fredoka-Regular.ttf') format('truetype');
+    font-display: swap;
 }
 
 :root {
-    --section-color: rgba(51, 51, 51, 0.836);
-    --border-color: palegoldenrod;
-    --border-color-2: rgb(156, 156, 156);
-    --header-color: rgb(124, 255, 255);
-    --counter-color: lime;
-    --text-color: white;
+    --section-color: #ffe8f3;
+    --bg-alt: #ffcee8;
+    --text-color: #991e5d;
+    --border-color: #e84398;
+    --border-color-2: #a30355;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background-image: linear-gradient(135deg, #ffd8ed, #ed3198);
 }
 
 .game {
-    max-width: 1000px;
+    max-width: 1024px;
     margin: 25px auto;
     display: grid;
     gap: 10px;
     grid-template-columns: 200px minmax(0, 1fr);
 }
 
+hr {
+    border: 1px dashed var(--border-color);
+}
+
 h1, h2 {
-    color: var(--header-color);
-    font-family: Arial;
+    color: var(--text-color);
     font-family: Aleo;
     border: 1px solid var(--border-color);
-    background-color: rgb(34, 34, 34);
+    background-color: var(--bg-alt);
     border-radius: 12px;
     margin-left: 8px;
     margin-right: 8px;
@@ -34,11 +51,10 @@ h1, h2 {
 h1 {
     font-size: 400%;
     margin: 12px;
-    color: var(--text-color);
 }
 
-p, h3 {
-    font-family: arial;
+p, h3, li, a, button {
+    font-family: fredoka;
     color: var(--text-color);
 }
 
@@ -47,18 +63,18 @@ main p, #changelog h3 {
     margin-right: 8px;
 }
 
-li {
-    color: var(--text-color);
-}
-
 span {
-    color: var(--counter-color);
+    color: gold;
+    font-family: fredoka;
 }
 
-body {
-    background-color: black;
-    background-image: url('../../site_files/assets/default-background.gif');
-    background-size: 120px auto;
+#counter span, #settings span, #bedrock-counter span {
+    color: green;
+}
+
+marquee {
+    color: var(--text-color);
+    font-family: fredoka;
 }
 
 header {
@@ -89,6 +105,11 @@ header {
     margin: 0 auto;
 }
 
+#bedrock-counter {
+    display: block;
+    text-align: center;
+}
+
 #settings {
     background-color: var(--section-color);
     border: 1px solid var(--border-color-2);
@@ -110,6 +131,7 @@ header {
     overflow: auto;
     grid-row: 3/4;
     grid-column: 3/4;
+    padding: 8px;
 }
 
 #shop {
@@ -136,20 +158,19 @@ header {
 button, #back {
     display: block;
     margin: 0 auto;
-    background-color: black;
-    color: white;
+    background-color: var(--bg-alt);
     border: 1px solid var(--border-color);
-    font-family: Arial;
     margin-bottom: 20px;
     touch-action: manipulation;
+    font-weight: bold;
 }
 
 button:hover, #back:hover {
-    background-color: rgb(40, 40, 40);
+    background-color: var(--section-color);
 }
 
 button:active, #back:active {
-    background-color: rgb(80, 80, 80);
+    color: gold;
 }
 
 #back {
@@ -158,6 +179,7 @@ button:active, #back:active {
     text-decoration: none;
     width: max-content;
     margin: 0;
+    background-color: var(--section-color);
 }
 
 main {
@@ -176,8 +198,9 @@ main {
     height: 20vw;
     width: auto;
     transition: ease-in-out 0.1s;
-    border: 4px dashed var(--border-color);
+    border: 2px dashed var(--border-color);
     touch-action: manipulation;
+    border-radius: 8px;
 }
 
 #gatherBedrock:hover {
@@ -225,7 +248,7 @@ footer {
 
     header, #counter, #settings, #changelog, #shop, main, footer {
         width: auto;
-        grid-column: 1/4;
+        grid-column: 1/3;
     }
     
     button {
@@ -241,7 +264,7 @@ footer {
     }
 
     #counter {
-        grid-row: 3/4;
+        grid-row: 5/6;
     }
 
     main {
@@ -249,7 +272,7 @@ footer {
     }
 
     #shop {
-        grid-row: 5/6;
+        grid-row: 3/4;
     }
 
     #shop img {

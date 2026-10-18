@@ -34,8 +34,8 @@ const ownedPhoebe = document.getElementById("ownedPhoebe");
 
 let isCooldown = false;
 
-// clicking
-gatherBedrock.addEventListener("click", () => {
+// gathering bedrocks
+function clickMolly() {
     if ((luckCharges > 0) && (unlockedElizabeth)) {
         luckCharges -= 1;
         bedrockMultiplier = 4;
@@ -71,8 +71,6 @@ gatherBedrock.addEventListener("click", () => {
         bedrockPerClick = 1;
     }
 
-    previousBedrocks = bedrockGainedTotal;
-
     bedrockGained += (bedrockPerClick * bedrockMultiplier);
     bedrockGainedTotal += (bedrockPerClick * bedrockMultiplier);
     updateBedrocks();
@@ -87,7 +85,7 @@ gatherBedrock.addEventListener("click", () => {
     setTimeout(() => {
         isCooldown = false;
     }, cooldownSpeed);
-});
+}
 
 // extra bedrock per click
 function extraBedrocks() {
@@ -98,42 +96,48 @@ function extraBedrocks() {
     }
 }
 
-// buy Abigail
-function buyAbigail() {
-    if ((unlockedAbigail !== true) && (bedrockGained >= 100)) {
+// buying characters
+function buyCharacter(character) {
+    if ((character === 'Abigail') && (unlockedAbigail !== true) && (bedrockGained >= 100)) {
         bedrockGained -= 100;
         unlockedAbigail = true;
         updateBedrocks();
-    }
-}
-
-// buy Cookie
-function buyCookie() {
-    if ((unlockedCookie !== true) && (bedrockGained >= 5000)) {
+    } else if ((character === 'Cookie') && (unlockedCookie !== true) && (bedrockGained >= 5000)) {
         bedrockGained -= 5000;
         unlockedCookie = true;
         updateBedrocks();
-    }
-}
-
-// buy Elizabeth
-function buyElizabeth() {
-    if ((unlockedElizabeth !== true) && (bedrockGained >= 22500)) {
+    } else if ((character === 'Elizabeth') && (unlockedElizabeth !== true) && (bedrockGained >= 22500)) {
         bedrockGained -= 22500;
         unlockedElizabeth = true;
         updateBedrocks();
-    }
-}
-
-// buy Phoebe
-function buyPhoebe() {
-    if ((unlockedPhoebe !== true) && (bedrockGained >= 55000)) {
+    } else if ((character === 'Phoebe') && (unlockedPhoebe !== true) && (bedrockGained >= 55000)) {
         bedrockGained -= 55000;
         unlockedPhoebe = true;
         updateBedrocks();
     }
 }
-    
+
+// buying boosts
+function buyBoost(boost) {
+    if ((boost === 'Heavier') && (bedrockGained >= 750) && (unlockedAbigail === true)) {
+        bedrockGained -= 750;
+        heavyCharges += 50;
+        updateBedrocks();
+    } else if ((boost === 'Generous') && (bedrockGained >= 1000) && (unlockedCookie === true)) {
+        bedrockGained -= 1000;
+        generousCharges += 20;
+        updateBedrocks();
+    } else if ((boost === 'Immense') && (bedrockGained >= 550) && (unlockedElizabeth === true)) {
+        bedrockGained -= 550;
+        luckCharges += 10;
+        updateBedrocks();
+    } else if ((boost === 'Efficient') && (bedrockGained >= 2000) && (unlockedPhoebe === true)) {
+        bedrockGained -= 2000;
+        efficientCharges += 30;
+        updateBedrocks();
+    }
+}
+
 // update counters
 function updateBedrocks() {
     bedrock.textContent = bedrockGained;
@@ -207,6 +211,27 @@ function progressSaved() {
 
 const autoSave = setInterval(progressSaved, 60000);
 
+// clicking
+gatherBedrock.addEventListener("click", clickMolly);
+
+// dialog
+dialogIndex = 0;
+const dialogues = [
+    { textContent: '"Please d-do not poke me!"' },
+    { textContent: '"Agh!"' },
+    { textContent: '"Hahaha, p-please stop!"' },
+    { textContent: '"Ungh~ Not there please!"' },
+    { textContent: '*Sigh*' },
+    { textContent: '"Can you be more gentle?"' }
+];
+const dialog = document.getElementById("dialog");
+
+gatherBedrock.addEventListener("click", () => {
+    dialogIndex = (dialogIndex + 1) % dialogues.length;
+    const dialogSwitch = dialogues[dialogIndex];
+    dialog.textContent = dialogSwitch.textContent;
+})
+
 // load saved progress
 window.addEventListener("DOMContentLoaded", () => {
     const savedMoney = localStorage.getItem("bedrockSaved");
@@ -239,11 +264,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     updateBedrocks();
 });
-
-// manual save
-function manualSave() {
-    progressSaved();
-}
 
 // reset
 let resetIndex = 0;
@@ -279,75 +299,13 @@ reset.addEventListener("click", () => {
     }
 });
 
-// dialog
-dialogIndex = 0;
-const dialogues = [
-    { textContent: '"Please d-do not poke me!"' },
-    { textContent: '"Agh!"' },
-    { textContent: '"Hahaha, p-please stop!"' },
-    { textContent: '"Ungh~ Not there please!"' },
-    { textContent: '*Sigh*' },
-    { textContent: '"Can you be more gentle?"' }
-];
-const dialog = document.getElementById("dialog");
-
-gatherBedrock.addEventListener("click", () => {
-    dialogIndex = (dialogIndex + 1) % dialogues.length;
-    const dialogSwitch = dialogues[dialogIndex];
-    dialog.textContent = dialogSwitch.textContent;
-    console.log(`+${bedrockGainedTotal - previousBedrocks}`);
-})
-
 // mobile only
-function showAbout() {
-    document.getElementById("about").style.display = "inherit";
-    document.getElementById("showAboutButton").style.display = "none";
-}
-
-function hideAbout() {
-    document.getElementById("about").style.display = "none";
-    document.getElementById("showAboutButton").style.display = "inherit";
-}
-
-// buy heavier clicks
-function buyHeavier() {
-    if ((bedrockGained >= 750) && (unlockedAbigail === true)) {
-        bedrockGained -= 750;
-        heavyCharges += 50;
-        updateBedrocks();
+function about(mode) {
+    if (mode === 'show') {
+        document.getElementById("about").style.display = "inherit";
+        document.getElementById("showAboutButton").style.display = "none";
+    } else if (mode === 'hide') {
+        document.getElementById("about").style.display = "none";
+        document.getElementById("showAboutButton").style.display = "inherit";
     }
 }
-
-// buy generous yields
-function buyGenerous() {
-    if ((bedrockGained >= 1000) && (unlockedCookie === true)) {
-        bedrockGained -= 1000;
-        generousCharges += 20;
-        updateBedrocks();
-    }
-}
-
-// buy immense luck
-function buyImmense() {
-    if ((bedrockGained >= 550) && (unlockedElizabeth === true)) {
-        bedrockGained -= 550;
-        luckCharges += 10;
-        updateBedrocks();
-    }
-}
-
-// buy efficient mining
-function buyEfficient() {
-    if ((bedrockGained >= 2000) && (unlockedPhoebe === true)) {
-        bedrockGained -= 2000;
-        efficientCharges += 30;
-        updateBedrocks();
-    }
-}
-
-// cheat 50000 bedrocks
-// function cheat() {
-//     bedrockGained += 50000;
-//     bedrockGainedTotal += 50000;
-//     updateBedrocks();
-// }
