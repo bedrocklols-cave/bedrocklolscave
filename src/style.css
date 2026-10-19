@@ -50,7 +50,7 @@ body {
 
 header, main, aside, footer {
     background-color: var(--bg-main);
-    border: 4px solid var(--border-main);
+    border: 2px solid var(--border-main);
     border-radius: 8px;
     padding: 0 8px;
     height: max-content;
@@ -80,26 +80,6 @@ footer {
     text-align: center;
 }
 
-/* mobile layout */
-@media screen and (max-width: 600px) {
-    #logo {
-        display: none;
-    }
-
-    .container {
-        grid-template-columns: auto minmax(0, 1fr);
-        grid-template-areas:
-            "header header"
-            "main main"
-            "navbar navbar"
-            "footer footer";
-    }
-
-    #navbar-button {
-        display: block;
-    }
-}
-
 /* general */
 h1, h2, h3, h4 {
     font-family: aleo;
@@ -107,10 +87,19 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    background-color: var(--bg-main);
-    border: 1px dashed var(--border-alt);
-    text-align: center;
     font-size: 2.8em;
+    background-color: var(--bg-main);
+}
+
+h1, aside h3 {
+    text-align: center;
+    border: 1px dotted var(--border-alt);
+    border-radius: 8px;
+}
+
+aside h3 {
+    background-color: var(--bg-alt);
+    background-image: url('/assets/background.png');
 }
 
 p {
@@ -118,11 +107,6 @@ p {
 }
 
 #navbar-button {
-    background-color: var(--bg-main);
-    border: 1px solid var(--border-main);
-    padding: 4px;
-    margin: 8px 0;
-    text-decoration: none;
     position: absolute;
     top: 0;
     left: 4;
@@ -134,14 +118,6 @@ p {
     align-self: center;
     border: 1px dashed var(--border-alt);
     margin: 12px auto;
-}
-
-aside h3 {
-    text-align: center;
-    background-color: var(--bg-alt);
-    background-image: url('/assets/background.png');
-    border: 1px dotted var(--border-alt);
-    border-radius: 4px;
 }
 
 footer a {
@@ -217,9 +193,29 @@ marquee {
     display: inline-block;
     background-color: var(--bg-main);
     margin: 8px 0;
-    padding: 8px;
+    padding: 4px;
     font-size: 1.2em;
     border: 1px solid var(--border-main);
     border-radius: 8px;
     text-decoration: none;
+}
+
+/* mobile layout */
+@media screen and (max-width: 600px) {
+    #logo {
+        display: none;
+    }
+
+    .container {
+        grid-template-columns: auto minmax(0, 1fr);
+        grid-template-areas:
+            "header header"
+            "main main"
+            "navbar navbar"
+            "footer footer";
+    }
+
+    #navbar-button {
+        display: block;
+    }
 }
