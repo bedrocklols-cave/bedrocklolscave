@@ -309,3 +309,33 @@ function about(mode) {
         document.getElementById("showAboutButton").style.display = "inherit";
     }
 }
+
+// menu
+shop = document.getelementbyid("shop");
+counter = document.getelementbyid("counter");
+settings = document.getelementbyid("settings");
+changelog = document.getelementbyid("changelog");
+
+function showSubMenu(submenu) {
+    if (submenu === 'shop') {
+        shop.style.display = "block";
+        counter.style.display = "none";
+        settings.style.display = "none";
+        changelog.style.display = "none";
+    } else if (submenu === 'counter') {
+        shop.style.display = "none";
+        counter.style.display = "block";
+        settings.style.display = "none";
+        changelog.style.display = "none";
+    } else if (submenu === 'settings') {
+        shop.style.display = "none";
+        counter.style.display = "none";
+        settings.style.display = "block";
+        changelog.style.display = "none";
+    } else if (submenu === 'changelog') {
+        shop.style.display = "none";
+        counter.style.display = "none";
+        settings.style.display = "none";
+        changelog.style.display = "block";
+    }
+}

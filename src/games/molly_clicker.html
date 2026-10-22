@@ -14,8 +14,8 @@
         <script defer src="molly_clicker.js"></script>
     </head>
     <body>
-        <a href="/index.html" id="back">> Go back?</a>
         <div class="game">
+        <a href="/index.html" id="exit-button" class="button">> Go back?</a>
             <header>
                 <h1>Molly Clicker!</h1>
             </header>
@@ -23,14 +23,15 @@
                 <div id="molly">
                     <h2 style="text-align: center; margin-bottom: 24px;">Click the Molly to gather bedrock!</h2>
                     <h3 id="bedrock-counter">Bedrocks: <span id="bedrock">0</span></h3>
-                    <img src="/gallery/digital/sfw/Submissive%20Molly.webp" alt="Molly" id="gatherBedrock" height="340" width="340">
+                    <img src="/gallery/digital/sfw/Submissive%20Molly.webp" alt="Molly" id="gatherBedrock" height="280" width="280">
                 </div>
-                <div class="message">
+                <div style="text-align: center;">
                     <p id="dialog" style="margin-top: 24px;">"Please d-do not poke me!!"</p>
                 </div>
+                <p id="autoSaving" style="text-align: center; color: green;">AutoSaving in 60 seconds...</p>
+                <hr>
                 <button onclick="about('show')" class="mobile-only" id="showAboutButton">Show About section</button>
                 <section id="about">
-                    <hr>
                     <h2 style="text-align: center;">About</h2>
                     <p>Molly Clicker is just a simple clicker game made in HTML, CSS, and JavaScript. It is inspired by Orteil & Opti's Cookie Clicker (not to be confused with my OC, Cookie).<br><br>I made this in a day and it is a small little project to sharpen my programming skills.<br><br>Anyway, if you feel your hands hurting, stop playing and take a rest!</p>
                     <hr>
@@ -38,92 +39,108 @@
                     <button onclick="about('hide')" class="mobile-only">Hide About section</button>
                 </section>
             </main>
-            <section id="shop">
-                <h2>Character Shop</h2>
+            <aside id="navbar">
+                <h3>Menu</h3>
                 <hr>
-                <img src="/assets/Abigail.webp" alt="Abigail" height="100" width="100" style="margin-top: 20px;">
-                <p style="background-color: rgb(112, 0, 6); color: white; border: 1px dashed white;">Abigail | +5 bedrock per click<br>Owned: <span id="ownedAbigail" style="font-weight: bold; color: red;">No</span></p>
-                <button onclick="buyCharacter('Abigail')">Buy Abigail - 100 Bedrocks</button>
-                <hr>
-                <img src="/assets/Cookie.webp" alt="Cookie" height="100" width="100">
-                <p style="background-color: rgb(90, 77, 0); color: white; border: 1px dashed white;">Cookie | +50 extra bedrock per click (CD: 3s)<br>Owned: <span id="ownedCookie" style="font-weight: bold; color: red;">No</span></p>
-                <button onclick="buyCharacter('Cookie')">Buy Cookie - 5000 Bedrocks</button>
-                <hr>
-                <img src="/assets/Elizabeth.webp" alt="Elizabeth" height="100" width="100">
-                <p style="background-color: rgb(0, 85, 0); color: white; border: 1px dashed white;">Elizabeth | x2 bedrock multiplier<br>Owned: <span id="ownedElizabeth" style="font-weight: bold; color: red;">No</span></p>
-                <button onclick="buyCharacter('Elizabeth')">Buy Elizabeth - 22500 Bedrocks</button>
-                <hr>
-                <img src="/assets/Phoebe.webp" alt="Phoebe" height="100" width="100">
-                <p style="background-color: rgb(70, 0, 92); color: white; border: 1px dashed white;">Phoebe | 2s extra bedrock cooldown reduction <br>Owned: <span id="ownedPhoebe" style="font-weight: bold; color: red;">No</span></p>
-                <button onclick="buyCharacter('Phoebe')">Buy Phoebe - 55000 Bedrocks</button>
-                <hr>
-                <h2>Single-use Boosts</h2>
-                <hr>
-                <p style="background-color: rgb(112, 0, 6); color: white; border: 1px dashed white;">Heavier Clicks | +20 bedrock per click (Requires Abigail)<br>Charges: <span id="heavyCharges" style="font-weight: bold;">0</span></p>
-                <button onclick="buyBoost('Heavier')">Buy 50x Heavier Clicks - 750 Bedrocks</button>
-                <hr>
-                <p style="background-color: rgb(90, 77, 0); color: white; border: 1px dashed white;">Generous Yields | +150 extra bedrock per click (Requires Cookie)<br>Charges: <span id="generousCharges" style="font-weight: bold;">0</span></p>
-                <button onclick="buyBoost('Generous')">Buy 20x Generous Yields - 1000 Bedrocks</button>
-                <hr>
-                <p style="background-color: rgb(0, 85, 0); color: white; border: 1px dashed white;">Immense Luck | x4 bedrock multiplier (Requires Elizabeth)<br>Charges: <span id="luckCharges" style="font-weight: bold;">0</span></p>
-                <button onclick="buyBoost('Immense')">Buy 10x Immense Luck - 550 Bedrocks</button>
-                <hr>
-                <p style="background-color: rgb(70, 0, 92); color: white; border: 1px dashed white;">Efficient Mining | No extra bedrock cooldown (Requires Phoebe)<br>Charges: <span id="efficientCharges" style="font-weight: bold;">0</span></p>
-                <button onclick="buyBoost('Efficient')">Buy 30x Efficient Mining - 2000 Bedrocks</button>
-            </section>
-            <section id="counter">
-                <h2>Counter</h2>
-                <hr>
-                <img src="molly_clicker_assets/bedrock.png" alt="bedrock">
-                <h3>Total Bedrocks: <span id="bedrockTotal">0</span></h3>
-                <hr>
-                <h2>Objective</h2>
-                <h3>Get <span>500000</span> total bedrocks.</h3>
-                <progress id="progress" value="0" max="500000" style="display: block; margin: 0 auto;"></progress>
-                <p id="goal">Goal: Not achieved...</p>
-            </section>
-            <section id="settings">
-                <h2>Settings</h2>
-                <button onclick="progressSaved()" style="margin-bottom: 6px;">Save Progress</button>
-                <button id="reset">Clear Progress</button>
-                <span id="autoSaving">AutoSaving in 60 seconds...</span>
-            </section>
-            <section id="changelog">
-                <h2 style="text-align: center;">Changelog</h2>
-                <hr>
-                <h3>v1.2 - October 18, 2026</h3>
-                <ul>
-                    <li>updated theme</li>
-                    <li>small layout changes</li>
-                    <li>refactored and cleaned JavaScript code</li>
-                </ul>
-                <h3>v1.1.1 - August 31, 2026</h3>
-                <ul>
-                    <li>optimized JavaScript code</li>
-                    <li>increased price of Elizabeth</li>
-                </ul>
-                <h3>v1.1 - August 29, 2026</h3>
-                <ul>
-                    <li>balancing of character prices</li>
-                    <li>added single-use boosts (found in the bottom of the shop)</li>
-                    <li>increased goal quota</li>
-                </ul>
-                <h3>v1.0.1 - August 28, 2026</h3>
-                <ul>
-                    <li>optimized mobile ui</li>
-                    <li>minor style changes</li>
-                </ul>
-                <h3>v1 - August 27, 2026</h3>
-                <ul>
-                    <li>game created.</li>
-                </ul>
-            </section>
+                <div id="menu">
+                    <button onclick="showSubMenu('shop')">Shop</button>
+                    <button onclick="showSubMenu('counter')">Counter</button>
+                    <button onclick="showSubMenu('settings')">Settings</button>
+                    <button onclick="showSubMenu('changelog')">Changelog</button>
+                </div>
+            </aside>
+            <aside id="sub-menu">
+                <section id="shop" class="wrapper">
+                    <h3>Character Shop</h3>
+                    <hr>
+                    <img src="/assets/Abigail.webp" alt="Abigail" height="100" width="100">
+                    <p style="background-color: rgb(112, 0, 6); color: white; border: 1px dashed white;">Abigail | +5 bedrock per click<br>Owned: <span id="ownedAbigail" style="font-weight: bold; color: red;">No</span></p>
+                    <button onclick="buyCharacter('Abigail')">Buy Abigail - 100 Bedrocks</button>
+                    <hr>
+                    <img src="/assets/Cookie.webp" alt="Cookie" height="100" width="100">
+                    <p style="background-color: rgb(90, 77, 0); color: white; border: 1px dashed white;">Cookie | +50 extra bedrock per click (CD: 3s)<br>Owned: <span id="ownedCookie" style="font-weight: bold; color: red;">No</span></p>
+                    <button onclick="buyCharacter('Cookie')">Buy Cookie - 5000 Bedrocks</button>
+                    <hr>
+                    <img src="/assets/Elizabeth.webp" alt="Elizabeth" height="100" width="100">
+                    <p style="background-color: rgb(0, 85, 0); color: white; border: 1px dashed white;">Elizabeth | x2 bedrock multiplier<br>Owned: <span id="ownedElizabeth" style="font-weight: bold; color: red;">No</span></p>
+                    <button onclick="buyCharacter('Elizabeth')">Buy Elizabeth - 22500 Bedrocks</button>
+                    <hr>
+                    <img src="/assets/Phoebe.webp" alt="Phoebe" height="100" width="100">
+                    <p style="background-color: rgb(70, 0, 92); color: white; border: 1px dashed white;">Phoebe | 2s extra bedrock cooldown reduction <br>Owned: <span id="ownedPhoebe" style="font-weight: bold; color: red;">No</span></p>
+                    <button onclick="buyCharacter('Phoebe')">Buy Phoebe - 55000 Bedrocks</button>
+                    <hr>
+                    <h3>Single-use Boosts</h3>
+                    <hr>
+                    <p style="background-color: rgb(112, 0, 6); color: white; border: 1px dashed white;">Heavier Clicks | +20 bedrock per click (Requires Abigail)<br>Charges: <span id="heavyCharges" style="font-weight: bold;">0</span></p>
+                    <button onclick="buyBoost('Heavier')">Buy 50x Heavier Clicks - 750 Bedrocks</button>
+                    <hr>
+                    <p style="background-color: rgb(90, 77, 0); color: white; border: 1px dashed white;">Generous Yields | +150 extra bedrock per click (Requires Cookie)<br>Charges: <span id="generousCharges" style="font-weight: bold;">0</span></p>
+                    <button onclick="buyBoost('Generous')">Buy 20x Generous Yields - 1000 Bedrocks</button>
+                    <hr>
+                    <p style="background-color: rgb(0, 85, 0); color: white; border: 1px dashed white;">Immense Luck | x4 bedrock multiplier (Requires Elizabeth)<br>Charges: <span id="luckCharges" style="font-weight: bold;">0</span></p>
+                    <button onclick="buyBoost('Immense')">Buy 10x Immense Luck - 550 Bedrocks</button>
+                    <hr>
+                    <p style="background-color: rgb(70, 0, 92); color: white; border: 1px dashed white;">Efficient Mining | No extra bedrock cooldown (Requires Phoebe)<br>Charges: <span id="efficientCharges" style="font-weight: bold;">0</span></p>
+                    <button onclick="buyBoost('Efficient')">Buy 30x Efficient Mining - 2000 Bedrocks</button>
+                </section>
+                <section id="counter" class="wrapper">
+                    <h3>Counter</h3>
+                    <hr>
+                    <img src="molly_clicker_assets/bedrock.png" alt="bedrock" height="50" width="50">
+                    <h4>Total Bedrocks: <span id="bedrockTotal">0</span></h4>
+                    <h3>Objective</h3>
+                    <hr>
+                    <h4>Get <span>500000</span> total bedrocks.</h4>
+                    <progress id="progress" value="0" max="500000" style="display: block; margin: 0 auto;"></progress>
+                    <p id="goal">Goal: Not achieved...</p>
+                </section>
+                <section id="settings" class="wrapper">
+                    <h3>Settings</h3>
+                    <hr>
+                    <button onclick="progressSaved()" style="margin-bottom: 6px;">Save Progress</button>
+                    <button id="reset">Clear Progress</button>
+                </section>
+                <section id="changelog" class="wrapper">
+                    <h3 style="text-align: center;">Changelog</h3>
+                    <hr>
+                    <h4>v1.2.1 - October 22, 2026</h4>
+                    <ul>
+                        <li>reworked mobile and desktop ui</li>
+                        <li>optimized css</li>
+                    </ul>
+                    <h4>v1.2 - October 18, 2026</h4>
+                    <ul>
+                        <li>updated theme</li>
+                        <li>small layout changes</li>
+                        <li>refactored and cleaned JavaScript code</li>
+                    </ul>
+                    <h4>v1.1.1 - August 31, 2026</h4>
+                    <ul>
+                        <li>optimized JavaScript code</li>
+                        <li>increased price of Elizabeth</li>
+                    </ul>
+                    <h4>v1.1 - August 29, 2026</h4>
+                    <ul>
+                        <li>balancing of character prices</li>
+                        <li>added single-use boosts (found in the bottom of the shop)</li>
+                        <li>increased goal quota</li>
+                    </ul>
+                    <h4>v1.0.1 - August 28, 2026</h4>
+                    <ul>
+                        <li>optimized mobile ui</li>
+                        <li>minor style changes</li>
+                    </ul>
+                    <h4>v1 - August 27, 2026</h4>
+                    <ul>
+                        <li>game created.</li>
+                    </ul>
+                </section>
+            </aside>
             <footer>
                 <p>Copyright (c) <span id="copyrightDate" style="color: var(--text-color);">2023</span> bedrocklol. All Rights Reserved.</p>
                 <nav aria-label="footer"> 
                     <a href="mailto:bedrocklolgame@gmail.com">Email</a>
                     <a href="/feed.xml">RSS Feed</a>
-                    <a href="#">Resources</a>
                 </nav>
                 <hr>
                 <marquee>

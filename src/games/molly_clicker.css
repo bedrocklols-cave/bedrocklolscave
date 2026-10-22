@@ -1,5 +1,14 @@
+/* global */
+:root {
+    --section-color: #ffe8f3;
+    --bg-alt: #ffcee8;
+    --text-color: #991e5d;
+    --border-color: #e84398;
+    --border-color-2: #a30355;
+}
+
 @font-face {
-    font-family: Aleo;
+    font-family: aleo;
     src: url('/fonts/Aleo-Bold.ttf') format('truetype');
     font-display: swap;
 }
@@ -9,58 +18,117 @@
     font-display: swap;
 }
 
-:root {
-    --section-color: #ffe8f3;
-    --bg-alt: #ffcee8;
-    --text-color: #991e5d;
-    --border-color: #e84398;
-    --border-color-2: #a30355;
-}
-
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: Arial;
+    background-color: var(--section-color);
     background-image: linear-gradient(135deg, #ffd8ed, #ed3198);
+    color: var(--text-color);
+    font-family: fredoka;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.mobile-only {
+    display: none;
+}
+
+/* layout */
 .game {
     max-width: 1024px;
-    margin: 25px auto;
+    margin: 48px auto;
     display: grid;
-    gap: 10px;
+    gap: 12px;
     grid-template-columns: 200px minmax(0, 1fr);
+    grid-template-areas: 
+        "header header header"
+        "navbar main sub-menu"
+        "footer footer footer";
 }
 
-hr {
-    border: 1px dashed var(--border-color);
-}
-
-h1, h2 {
-    color: var(--text-color);
-    font-family: Aleo;
+header, main, aside, footer {
+    overflow: auto;
+    background-color: var(--section-color);
     border: 1px solid var(--border-color);
-    background-color: var(--bg-alt);
-    border-radius: 12px;
-    margin-left: 8px;
-    margin-right: 8px;
+    border-radius: 8px;
+    padding: 0 8px;
+    height: max-content;
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+    height: max-content;
+}
+
+#sub-menu {
+    grid-area: sub-menu;
+    max-height: 740px;
+    width: 260px;
+}
+
+#navbar {
+    grid-area: navbar;
+    max-width: 200px;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+}
+
+#settings, #changelog, #counter {
+    display: none;
+}
+
+/* general */
+h1, h2, h3, h4 {
+    font-family: aleo;
+    text-align: center;
+    margin: 16px 0;
 }
 
 h1 {
-    font-size: 400%;
-    margin: 12px;
+    font-size: 4em;
 }
 
-p, h3, li, a, button {
-    font-family: fredoka;
+h1, h2, aside h3 {
+    border-radius: 8px;
+    background-color: var(--bg-alt);
+    border: 1px solid var(--border-color);
+}
+
+p {
+    margin: 12px 0;
+}
+
+#exit-button {
+    background-color: var(--section-color);
+    position: absolute;
+    top: 0;
+    left: 4;
+}
+
+footer a {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+a, img, marquee {
     color: var(--text-color);
 }
 
-main p, #changelog h3 {
-    margin-left: 8px;
-    margin-right: 8px;
+a:active, button:active {
+    color: gold;
 }
 
 span {
@@ -68,41 +136,47 @@ span {
     font-family: fredoka;
 }
 
-#counter span, #settings span, #bedrock-counter span {
+#menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#menu button {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+#counter span, main span {
     color: green;
 }
 
+#settings button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    flex-direction: column;
+}
+
+#changelog h4 {
+    text-align: left;
+}
+
+hr {
+    border: 1px dashed var(--border-color);
+}
+
 marquee {
-    color: var(--text-color);
-    font-family: fredoka;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-alt);
 }
 
-header {
-    background-color: var(--section-color);
-    border: 1px solid var(--border-color-2);
-    border-radius: 8px;
+.wrapper {
     text-align: center;
-    padding: 4px;
-    grid-row: 1/2;
-    grid-column: 1/4;
 }
 
-#counter {
-    background-color: var(--section-color);
-    border: 1px solid var(--border-color-2);
-    text-align: center;
-    height: max-content;
-    border-radius: 8px;
-    padding: 4px;
-    grid-row: 2/3;
-    grid-column: 1/2;
-}
-
-#counter img {
-    height: 50px;
-    width: auto;
-    display: block;
-    margin: 0 auto;
+li {
+    text-align: left;
 }
 
 #bedrock-counter {
@@ -110,93 +184,28 @@ header {
     text-align: center;
 }
 
-#settings {
-    background-color: var(--section-color);
-    border: 1px solid var(--border-color-2);
-    border-radius: 8px;
-    height: max-content;
-    text-align: center;
-    padding: 4px;
-    grid-row: 3/4;
-    grid-column: 1/2;
-}
-
-#changelog {
-    background-color: var(--section-color);
-    border: 1px solid var(--border-color-2);
-    border-radius: 8px;
-    height: 200px;
-    width: 250px;
-    padding: 4px;
-    overflow: auto;
-    grid-row: 3/4;
-    grid-column: 3/4;
-    padding: 8px;
-}
-
-#shop {
-    background-color: var(--section-color);
-    border: 1px solid var(--border-color-2);
-    text-align: center;
-    border-radius: 8px;
-    height: 450px;
-    width: 250px;
-    padding: 4px;
-    overflow: auto;
-    grid-row: 2/3;
-    grid-column: 3/4;
-}
-
-#shop img {
-    height: 100px;
-    display: block;
-    margin: 0 auto;
-    width: auto;
-    border: 2px dotted var(--border-color);
-}
-
-button, #back {
-    display: block;
-    margin: 0 auto;
+button, .button {
+    display: inline-block;
     background-color: var(--bg-alt);
+    margin: 8px 0;
+    padding: 4px;
+    font-size: 1em;
     border: 1px solid var(--border-color);
-    margin-bottom: 20px;
     touch-action: manipulation;
     font-weight: bold;
-}
-
-button:hover, #back:hover {
-    background-color: var(--section-color);
-}
-
-button:active, #back:active {
-    color: gold;
-}
-
-#back {
-    font-family: Aleo;
-    font-size: 140%;
     text-decoration: none;
-    width: max-content;
-    margin: 0;
-    background-color: var(--section-color);
+    font-family: fredoka;
+    color: var(--text-color);
 }
 
-main {
+button:hover, .button:hover {
     background-color: var(--section-color);
-    border: 1px solid var(--border-color-2);
-    border-radius: 8px;
-    height: max-content;
-    padding: 4px;
-    grid-row: 2/4;
-    grid-column: 2/3;
 }
 
 #gatherBedrock {
     display: block;
     margin: 0 auto;
-    height: 20vw;
-    width: auto;
+    width: 280px;
     transition: ease-in-out 0.1s;
     border: 2px dashed var(--border-color);
     touch-action: manipulation;
@@ -213,89 +222,45 @@ main {
     transition: ease-out 0.1s;
 }
 
-.message {
-    text-align: center;
-}
-
-footer {
-    background-color: var(--section-color);
-    border: 1px solid var(--border-color-2);
+aside img {
+    margin: 0 auto;
     border-radius: 8px;
-    color: white;
-    text-align: center;
-    padding: 4px;
-    grid-row: 4/5;
-    grid-column: 1/4;
 }
 
-.mobile-only {
-    display: none;
+progress {
+    max-width: 100%;
 }
 
+/* mobile layout */
 @media screen and (max-width: 768px) {
     .game {
-        max-width: 1000px;
-        margin: 25px auto;
-        display: grid;
-        gap: 10px;
         grid-template-columns: auto minmax(0, 1fr);
+        grid-template-areas: 
+            "header header"
+            "main main"
+            "navbar navbar"
+            "sub-menu sub-menu"
+            "footer footer";
     }
 
-    #gatherBedrock {
-        height: 50vw;
+    header, main, aside, #sub-menu, #navbar, footer {
         width: auto;
     }
 
-    header, #counter, #settings, #changelog, #shop, main, footer {
-        width: auto;
-        grid-column: 1/3;
-    }
-    
-    button {
-        font-size: 120%;
-    }
-
-    h1 {
-        font-size: 300%;
-    }
-
-    header {
-        grid-row: 1/2;
-    }
-
-    #counter {
-        grid-row: 5/6;
-    }
-
-    main {
-        grid-row: 2/3;
-    }
-
-    #shop {
-        grid-row: 3/4;
-    }
-
-    #shop img {
-        height: 30vw;
-    }
-
-    #settings {
-        grid-row: 4/5;
-    }
-
-    #changelog {
-        grid-row: 6/7;
-    }
-
-    footer {
-        grid-row: 7/8;
+    #navbar {
+        max-width: none;
     }
 
     .mobile-only {
-        display: inherit;
+        display: block;
     }
 
     #about {
         display: none;
+    }
+
+    #menu {
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 }
