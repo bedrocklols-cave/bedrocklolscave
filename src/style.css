@@ -1,4 +1,6 @@
 /* global */
+
+/* default light mode theme */
 :root {
     --bg-main: #f5e9ff;
     --bg-alt: #f0daff;
@@ -6,6 +8,7 @@
     --text-alt: #350a49;
     --border-main: #af45e0;
     --border-alt: #c165ff;
+    --active: gold;
 }
 
 @font-face {
@@ -23,16 +26,42 @@
     box-sizing: border-box;
 }
 
-#navbar-button {
-    display: none;
-}
-
 body {
     background-color: var(--bg-alt);
     background-image: url('/assets/background.png');
     background-position: center;
     color: var(--text-main);
     font-family: fredoka;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--border-alt);
+    border-radius: 8px;
+}
+
+/* dark mode theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-main: #220238;
+        --bg-alt: #32074f;
+        --text-main: #e1bcff;
+        --text-alt: #ffeead;
+        --border-main: #e8c9ff;
+        --border-alt: #ffe28c;
+        --active: lightblue;
+    }
+
+    body {
+        background-image: url('/assets/darkmode-background.png');
+    }
 }
 
 /* layout */
@@ -58,7 +87,7 @@ header, main, aside, footer {
 
 header {
     grid-area: header;
-    background-image: url('/assets/bannerbackground.png');
+    background-image: linear-gradient(to top, var(--bg-main), var(--bg-alt));
     background-position: center;
 }
 
@@ -98,8 +127,8 @@ h1, aside h3 {
 }
 
 aside h3 {
-    background-color: var(--bg-alt);
-    background-image: url('/assets/background.png');
+    background-color: var(--bg-main);
+    background-image: linear-gradient(to top, var(--bg-main), var(--bg-alt));
 }
 
 p {
@@ -107,6 +136,7 @@ p {
 }
 
 #navbar-button {
+    display: none;
     position: absolute;
     top: 0;
     left: 4;
@@ -127,17 +157,6 @@ footer a {
 
 a, img, marquee {
     color: var(--text-alt);
-}
-
-iframe {
-    height: 100%;
-    width: 100%;
-    border: 1px solid var(--border-alt);
-    border-radius: 8px;
-}
-
-a:active {
-    color: gold;
 }
 
 nav li {
@@ -169,16 +188,17 @@ marquee {
     padding: 8px 4px;
 }
 
-.gallery img, .project img {
-    padding: 0 4px;
+.gallery img {
     border-radius: 8px;
-    height: 100%;
-    width: auto;
+    padding: 0 4px;
+    max-width: none;
 }
 
 .project img {
-    width: 80%;
     border: 1px solid var(--border-alt);
+    margin: 0 auto;
+    padding: 4px;
+    border-radius: 4px;
 }
 
 .project {
@@ -189,7 +209,7 @@ marquee {
     font-size: 2em;
 }
 
-.button {
+.button, button {
     display: inline-block;
     background-color: var(--bg-main);
     margin: 8px 0;
@@ -198,6 +218,16 @@ marquee {
     border: 1px solid var(--border-main);
     border-radius: 8px;
     text-decoration: none;
+    font-family: fredoka;
+    color: var(--text-alt);
+}
+
+.button:hover, button:hover {
+    background-color: var(--bg-alt);
+}
+
+a:active, .button:active, button:active {
+    color: var(--active);
 }
 
 /* mobile layout */
@@ -217,5 +247,9 @@ marquee {
 
     #navbar-button {
         display: block;
+    }
+
+    h1 {
+        font-size: 2.2em;
     }
 }
