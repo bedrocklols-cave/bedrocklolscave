@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="bedrocklol's art gallery!">
+        <title>Art Gallery | bedrocklol's cave</title>
+        <link rel="canonical" href="https://bedrocklolscave.neocities.org/gallery">
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <script defer src="/script.js"></script>
+        <style>
+            .gallery {
+                margin-bottom: 8px;
+                height: max-content;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+            }
+
+            #traditional, #photography, #image-manipulation, #graphic-design, #nsfw-digital, #nsfw-traditional {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <a href="#sidebar" id="navbar-button" class="button" aria-label="jump-to-navbar">Navbar</a>
+            <header>
+                <h1>Art Gallery!</h1>
+            </header>
+            <header id="logo">
+                <img src="/assets/website-logo.png" alt="bedrocklol's cave logo" height="88" width="88">
+            </header>
+            <main>
+                <section>
+                    <h2>Welcome to my Art Gallery!</h2>
+                    <hr>
+                    <p>If you're on a desktop, hover on an image to see its description. But, if you're on a mobile device, tap and hold the image, then click on the title to fully see its description.<br><br>Beware! Lots of images present in this page. If you have data connection, this WILL cost you a lot of time and money to load everything!<br><br>Content Warning: NSFW artworks ahead such as, but not limited to: Nudity, Lewd, etc.</p>
+                    <hr>
+                    <label for="galleries">Select a gallery:</label>
+                    <select name="galleries" id="galleries" autocomplete="off">
+                        <optgroup label="SFW">
+                            <option value="" selected onclick="showGallery(0)">Digital</option>
+                            <option value="1" onclick="showGallery(1)">Traditional</option>
+                            <option value="2" onclick="showGallery(2)">Photography</option>
+                            <option value="3" onclick="showGallery(3)">Image Manipulation</option>
+                            <option value="4" onclick="showGallery(4)">Graphic Design</option>
+                        </optgroup>
+                        <optgroup label="NSFW">
+                            <option value="5" onclick="showGallery(5)">NSFW Digital</option>
+                            <option value="6" onclick="showGallery(6)">NSFW Traditional</option>
+                        </optgroup>
+                    </select>
+                </section>
+                <section id="digital">
+                    <h2>Digital</h2>
+                    <hr>
+                    <!-- 1:1 - H: 333, W: 333 -->
+                    <!-- 3:4 - H: 333, W: 250 -->
+                    <div class="gallery">
+                        <img src="gallery/digital/sfw/Submissive%20Molly.webp" alt="Submissive Molly" title="Submissive Molly" height="333" width="333">
+                        <img src="gallery/digital/sfw/Cookie%20chilling.webp" alt="Cookie Chilling" title="Cookie Chilling" height="333" width="250">
+                        <img src="gallery/digital/sfw/Abigail%20greets%20ya.webp" alt="Abigail greets ya" title="Abigail greets ya" height="333" width="250">
+                        <img src="gallery/digital/sfw/Serpent%20Slayer.webp" alt="Serpent Slayer" title="Serpent Slayer" height="333" width="250">
+                        <img src="gallery/digital/sfw/Shy%20Phoebe.webp" alt="Shy Phoebe" title="Shy Phoebe" height="333" width="250">
+                    </div>
+                </section>
+                <section id="traditional">
+                    <h2>Traditional</h2>
+                    <hr>
+                    <!-- 1:1 - H: 333, W: 333 -->
+                    <!-- 3:4 - H: 333, W: 250 -->
+                    <div class="gallery">
+                        <img src="gallery/digital/sfw/Submissive%20Molly.webp" alt="Submissive Molly" title="Submissive Molly" height="333" width="333">
+                        <img src="gallery/digital/sfw/Cookie%20chilling.webp" alt="Cookie Chilling" title="Cookie Chilling" height="333" width="250">
+                        <img src="gallery/digital/sfw/Abigail%20greets%20ya.webp" alt="Abigail greets ya" title="Abigail greets ya" height="333" width="250">
+                        <img src="gallery/digital/sfw/Serpent%20Slayer.webp" alt="Serpent Slayer" title="Serpent Slayer" height="333" width="250">
+                        <img src="gallery/digital/sfw/Shy%20Phoebe.webp" alt="Shy Phoebe" title="Shy Phoebe" height="333" width="250">
+                    </div>
+                </section>
+                <section id="photography">
+                    <h2>Photography</h2>
+                    <hr>
+                    <!-- 1:1 - H: 333, W: 333 -->
+                    <!-- 3:4 - H: 333, W: 250 -->
+                    <div class="gallery">
+                        <img src="gallery/digital/sfw/Submissive%20Molly.webp" alt="Submissive Molly" title="Submissive Molly" height="333" width="333">
+                        <img src="gallery/digital/sfw/Cookie%20chilling.webp" alt="Cookie Chilling" title="Cookie Chilling" height="333" width="250">
+                        <img src="gallery/digital/sfw/Abigail%20greets%20ya.webp" alt="Abigail greets ya" title="Abigail greets ya" height="333" width="250">
+                        <img src="gallery/digital/sfw/Serpent%20Slayer.webp" alt="Serpent Slayer" title="Serpent Slayer" height="333" width="250">
+                        <img src="gallery/digital/sfw/Shy%20Phoebe.webp" alt="Shy Phoebe" title="Shy Phoebe" height="333" width="250">
+                    </div>
+                </section>
+                <section id="image-manipulation">
+                    <h2>Image Manipulation</h2>
+                    <hr>
+                    <!-- 1:1 - H: 333, W: 333 -->
+                    <!-- 3:4 - H: 333, W: 250 -->
+                    <div class="gallery">
+                        <img src="gallery/digital/sfw/Submissive%20Molly.webp" alt="Submissive Molly" title="Submissive Molly" height="333" width="333">
+                        <img src="gallery/digital/sfw/Cookie%20chilling.webp" alt="Cookie Chilling" title="Cookie Chilling" height="333" width="250">
+                        <img src="gallery/digital/sfw/Abigail%20greets%20ya.webp" alt="Abigail greets ya" title="Abigail greets ya" height="333" width="250">
+                        <img src="gallery/digital/sfw/Serpent%20Slayer.webp" alt="Serpent Slayer" title="Serpent Slayer" height="333" width="250">
+                        <img src="gallery/digital/sfw/Shy%20Phoebe.webp" alt="Shy Phoebe" title="Shy Phoebe" height="333" width="250">
+                    </div>
+                </section>
+                <section id="graphic-design">
+                    <h2>Graphic Design</h2>
+                    <hr>
+                    <!-- 1:1 - H: 333, W: 333 -->
+                    <!-- 3:4 - H: 333, W: 250 -->
+                    <div class="gallery">
+                        <img src="gallery/digital/sfw/Submissive%20Molly.webp" alt="Submissive Molly" title="Submissive Molly" height="333" width="333">
+                        <img src="gallery/digital/sfw/Cookie%20chilling.webp" alt="Cookie Chilling" title="Cookie Chilling" height="333" width="250">
+                        <img src="gallery/digital/sfw/Abigail%20greets%20ya.webp" alt="Abigail greets ya" title="Abigail greets ya" height="333" width="250">
+                        <img src="gallery/digital/sfw/Serpent%20Slayer.webp" alt="Serpent Slayer" title="Serpent Slayer" height="333" width="250">
+                        <img src="gallery/digital/sfw/Shy%20Phoebe.webp" alt="Shy Phoebe" title="Shy Phoebe" height="333" width="250">
+                    </div>
+                </section>
+                <section id="nsfw-digital">
+                    <h2>NSFW Digital</h2>
+                    <hr>
+                    <!-- 1:1 - H: 333, W: 333 -->
+                    <!-- 3:4 - H: 333, W: 250 -->
+                    <div class="gallery">
+                        <img src="gallery/digital/sfw/Submissive%20Molly.webp" alt="Submissive Molly" title="Submissive Molly" height="333" width="333">
+                        <img src="gallery/digital/sfw/Cookie%20chilling.webp" alt="Cookie Chilling" title="Cookie Chilling" height="333" width="250">
+                        <img src="gallery/digital/sfw/Abigail%20greets%20ya.webp" alt="Abigail greets ya" title="Abigail greets ya" height="333" width="250">
+                        <img src="gallery/digital/sfw/Serpent%20Slayer.webp" alt="Serpent Slayer" title="Serpent Slayer" height="333" width="250">
+                        <img src="gallery/digital/sfw/Shy%20Phoebe.webp" alt="Shy Phoebe" title="Shy Phoebe" height="333" width="250">
+                    </div>
+                </section>
+                <section id="nsfw-traditional">
+                    <h2>NSFW Traditional</h2>
+                    <hr>
+                    <!-- 1:1 - H: 333, W: 333 -->
+                    <!-- 3:4 - H: 333, W: 250 -->
+                    <div class="gallery">
+                        <img src="gallery/digital/sfw/Submissive%20Molly.webp" alt="Submissive Molly" title="Submissive Molly" height="333" width="333">
+                        <img src="gallery/digital/sfw/Cookie%20chilling.webp" alt="Cookie Chilling" title="Cookie Chilling" height="333" width="250">
+                        <img src="gallery/digital/sfw/Abigail%20greets%20ya.webp" alt="Abigail greets ya" title="Abigail greets ya" height="333" width="250">
+                        <img src="gallery/digital/sfw/Serpent%20Slayer.webp" alt="Serpent Slayer" title="Serpent Slayer" height="333" width="250">
+                        <img src="gallery/digital/sfw/Shy%20Phoebe.webp" alt="Shy Phoebe" title="Shy Phoebe" height="333" width="250">
+                    </div>
+                </section>
+            </main>
+            <aside id="sidebar">
+                <img src="/assets/Molly.webp" alt="Molly portrait" class="portrait" height="150" width="150">
+                <img src="/assets/Molly-blinkie.gif" alt="Molly blinkie" class="portrait" height="22" width="150">
+                <hr style="border-style: solid; border-color: var(--border-main);">
+                <nav aria-label="navigator">
+                    <h3>Navigator</h3>
+                    <hr>
+                    <p>General</p>
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/gallery.html">Art Gallery</a></li>
+                        <li><a href="/projects.html">Projects</a></li>
+                        <li><a href="/original_characters.html">Original Characters</a></li>
+                    </ul>
+                    <p>Games</p>
+                    <ul>
+                        <li><a href="/games/molly_clicker.html">Molly Clicker</a></li>
+                    </ul>
+                    <p>External</p>
+                    <ul>
+                        <li><a href="https://www.youtube.com/@bedrocklolgame" target="_blank">YouTube</a></li>
+                        <li><a href="https://github.com/bedrocklols-cave" target="_blank">GitHub</a></li>
+                        <li><a href="https://bedrocklolscave.atabook.org/" target="_blank">Guestbook</a></li>
+                        <li><a href="https://ko-fi.com/bedrocklolgame" target="_blank">Ko-fi</a></li>
+                        <li><a href="https://neocities.org/site/bedrocklolscave" target="_blank">Neocities</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <footer>
+                <p>Copyright (c) <span id="copyrightDate">2023</span> bedrocklol. All Rights Reserved.</p>
+                <nav aria-label="footer">
+                    <a href="mailto:bedrocklolgame@gmail.com">Email</a>
+                    <a href="/feed.xml">RSS Feed</a>
+                    <a href="/resources.html">Resources</a>
+                </nav>
+                <hr>
+                <marquee>
+                    *-==-*@-=-| bedrocklol's cave |-=-@*-==-*
+                </marquee>
+            </footer>
+        </div>
+    </body>
+</html>
