@@ -181,7 +181,6 @@ select {
     border-radius: 4px;
     background-color: var(--bg-alt);
     color: var(--text-alt);
-    font-size: 20px;
 }
 
 .wrapper, .project, .gallery {
@@ -201,7 +200,6 @@ select {
 .gallery img {
     border-radius: 8px;
     padding: 4px 4px;
-    max-width: none;
 }
 
 .project img {
