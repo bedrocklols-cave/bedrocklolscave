@@ -19,6 +19,7 @@
                 justify-content: space-evenly;
             }
 
+            #digital,
             #traditional,
             #photography,
             #image-manipulation,
@@ -45,19 +46,20 @@
                     <hr>
                     <p>If you're on a desktop, hover on an image to see its description. But, if you're on a mobile device, tap and hold the image, then click on the title to fully see its description.<br><br>Beware! Lots of images present in this page. If you have data connection, this WILL cost you a lot of time and money to load everything!<br><br>Content Warning: NSFW artworks ahead such as, but not limited to: Nudity, Lewd, etc.</p>
                     <hr>
-                    <label for="galleries">Select a gallery:</label>
-                    <select name="galleries" id="galleries" autocomplete="off">
+                    <label for="galleries">Current Gallery:</label>
+                    <select name="galleries" id="galleries">
                         <optgroup label="SFW">
-                            <option value="" selected onclick="showGallery(0)">Digital</option>
-                            <option value="1" onclick="showGallery(1)">Traditional</option>
-                            <option value="2" onclick="showGallery(2)">Photography</option>
-                            <option value="3" onclick="showGallery(3)">Image Manipulation</option>
-                            <option value="4" onclick="showGallery(4)">Graphic Design</option>
-                            <option value="5" onclick="showGallery(5)">Fan Art</option>
+                            <option value="" selected disabled hidden>Choose</option>
+                            <option value="0">Digital</option>
+                            <option value="1">Traditional</option>
+                            <option value="2">Photography</option>
+                            <option value="3">Image Manipulation</option>
+                            <option value="4">Graphic Design</option>
+                            <option value="5">Fan Art</option>
                         </optgroup>
                         <optgroup label="NSFW">
-                            <option value="6" onclick="showGallery(6)">NSFW Digital</option>
-                            <option value="7" onclick="showGallery(7)">NSFW Traditional</option>
+                            <option value="6">NSFW Digital</option>
+                            <option value="7">NSFW Traditional</option>
                         </optgroup>
                     </select>
                 </section>
@@ -151,38 +153,61 @@
                     <h2>Photography</h2>
                     <hr>
                     <div class="gallery">
-                        <img src="gallery/digital/sfw/Submissive%20Molly.webp" alt="Submissive Molly" title="Submissive Molly" height="333" width="333">
-                        <img src="gallery/digital/sfw/Cookie%20chilling.webp" alt="Cookie Chilling" title="Cookie Chilling" height="333" width="250">
-                        <img src="gallery/digital/sfw/Abigail%20greets%20ya.webp" alt="Abigail greets ya" title="Abigail greets ya" height="333" width="250">
-                        <img src="gallery/digital/sfw/Serpent%20Slayer.webp" alt="Serpent Slayer" title="Serpent Slayer" height="333" width="250">
-                        <img src="gallery/digital/sfw/Shy%20Phoebe.webp" alt="Shy Phoebe" title="Shy Phoebe" height="333" width="250">
+                        <img loading="lazy" height="333" width="721" src="gallery/photography/Flame%20of%20The%20Woods.webp" title="Flame of The Woods | I always see these flowers in the Philippines, no matter where I go. This could go hard for a wallpaper." alt="Flame of The Woods">
+                        <img loading="lazy" height="333" width="154" src="gallery/photography/Six%20petal%20flame%20of%20the%20woods.webp" title="Six petal flame of the woods | This flower usually has 4 petals, sometimes 5. But, this is the first time I've seen 6 petals!" alt="Six petal flame of the woods">
+                        <img loading="lazy" height="333" width="589" src="gallery/photography/Confident%20flaming%20ball.webp" title="Confident Flaming Ball | Got a better picture of this place." alt="Confident Flaming Ball">
+                        <img loading="lazy" height="333" width="589" src="gallery/photography/Shy%20flaming%20ball.webp" title="Shy Flaming Ball | Could have been better. Coming home to this sunset was blissful." alt="Shy Flaming Ball">
+                        <img loading="lazy" height="333" width="589" src="gallery/photography/Amazing%20Cloud.webp" title="Amazing Cloud | Look at this amazing cloud that I took a picture of." alt="Amazing Cloud">
+                        <img loading="lazy" height="333" width="444" src="gallery/photography/Farmland%203.webp" title="Farmland 3 | Went outside with my mom and little sis to go eat at a place located in the farmlands." alt="Farmland 3">
+                        <img loading="lazy" height="333" width="444" src="gallery/photography/Sunrise.webp" title="Sunrise" alt="Sunrise">
+                        <img loading="lazy" height="333" width="444" src="gallery/photography/Bridge%20construction.webp" title="Bridge construction" alt="Bridge Construction">
+                        <img loading="lazy" height="333" width="444" src="gallery/photography/Before%20sunset.webp" title="The sky before sunset" alt="Before Sunset">
+                        <img loading="lazy" height="333" width="444" src="gallery/photography/Boat.webp" title="A river with an operating boat" alt="Boat">
+                        <img loading="lazy" height="333" width="444" src="gallery/photography/Dusk.webp" title="The dusk" alt="Dusk">
+                        <img loading="lazy" height="333" width="333" src="gallery/photography/White%20flower.webp" title="A white flower | My granny has a lot of flowers planted on her home. I decided to take a photo." alt="White Flower">
+                        <img loading="lazy" height="333" width="333" src="gallery/photography/Red%20flowers.webp" title="Red flowers | These look so good." alt="Red Flowers">
+                        <img loading="lazy" height="333" width="444" src="gallery/photography/Farmland.webp" title="Farmland" alt="Farmland">
+                        <img loading="lazy" height="333" width="444" src="gallery/photography/Dock.webp" title="A dock for a boat to transport people to the other side." alt="Dock">
+                        <img loading="lazy" height="333" width="444" src="gallery/photography/Farmland%202.webp" title="A lone tree" alt="Tree">
+                        <img loading="lazy" height="333" width="444" src="gallery/photography/Sunset.webp" title="A beautiful sunset" alt="Sunset">
+                        <img loading="lazy" height="333" width="444" src="gallery/photography/Night%20sky.webp" title="The night sky" alt="Night Sky">
+                        <img loading="lazy" height="333" width="666" src="gallery/photography/River.webp" title="A river" alt="River">
                     </div>
                 </section>
                 <section id="image-manipulation">
                     <h2>Image Manipulation</h2>
                     <hr>
                     <div class="gallery">
-                        <img src="gallery/digital/sfw/Submissive%20Molly.webp" alt="Submissive Molly" title="Submissive Molly" height="333" width="333">
-                        <img src="gallery/digital/sfw/Cookie%20chilling.webp" alt="Cookie Chilling" title="Cookie Chilling" height="333" width="250">
-                        <img src="gallery/digital/sfw/Abigail%20greets%20ya.webp" alt="Abigail greets ya" title="Abigail greets ya" height="333" width="250">
-                        <img src="gallery/digital/sfw/Serpent%20Slayer.webp" alt="Serpent Slayer" title="Serpent Slayer" height="333" width="250">
-                        <img src="gallery/digital/sfw/Shy%20Phoebe.webp" alt="Shy Phoebe" title="Shy Phoebe" height="333" width="250">
+                        <img loading="lazy" height="333" width="333" src="gallery/image_manipulation/Tank%20Nana.webp" title="Tank Nana | thank you Aurora Gaming PH for this" alt="Tank Nana">
+                        <img loading="lazy" height="333" width="716" src="gallery/image_manipulation/I%20have%20awoken.webp" title="Average 2022 bedrocklolgame shenanigans" alt="I have awoken">
+                        <img loading="lazy" height="333" width="333" src="gallery/image_manipulation/Four%20horsewomen.webp" title="Four Horsewomen" alt="Four Horsewomen">
+                        <img loading="lazy" height="333" width="250" src="gallery/image_manipulation/The%20crash%20zones.webp" title="The crash zones" alt="The Crash Zones">
+                        <img loading="lazy" height="333" width="333" src="gallery/image_manipulation/I%20have%20two%20sides.webp" title="I have two sides" alt="I Have Two Sides">
+                        <img loading="lazy" height="333" width="391" src="gallery/image_manipulation/Graveyard_s%20grave.webp" title="Graveyard's grave" alt="Graveyard">
+                        <img loading="lazy" height="333" width="592" src="gallery/image_manipulation/Fastest%20break.webp" title="How to break diamond in 0.01s" alt="Fastest Break">
+                        <img loading="lazy" height="333" width="592" src="gallery/image_manipulation/Candy%20crush%20patch%20notes.webp" title="NEW CANDY CRUSH UPDATE?" alt="Candy Crush Patch Notes">
+                        <img loading="lazy" height="333" width="592" src="gallery/image_manipulation/Boss%20mayhem.webp" title="Boss mayhem 1v5" alt="Boss Mayhem">
+                        <img loading="lazy" height="333" width="666" src="gallery/image_manipulation/Blood%20Moon.webp" title="Blood moon event" alt="Blood Moon">
                     </div>
                 </section>
                 <section id="graphic-design">
                     <h2>Graphic Design</h2>
                     <hr>
                     <div class="gallery">
-                        <img src="gallery/digital/sfw/Submissive%20Molly.webp" alt="Submissive Molly" title="Submissive Molly" height="333" width="333">
-                        <img src="gallery/digital/sfw/Cookie%20chilling.webp" alt="Cookie Chilling" title="Cookie Chilling" height="333" width="250">
-                        <img src="gallery/digital/sfw/Abigail%20greets%20ya.webp" alt="Abigail greets ya" title="Abigail greets ya" height="333" width="250">
-                        <img src="gallery/digital/sfw/Serpent%20Slayer.webp" alt="Serpent Slayer" title="Serpent Slayer" height="333" width="250">
-                        <img src="gallery/digital/sfw/Shy%20Phoebe.webp" alt="Shy Phoebe" title="Shy Phoebe" height="333" width="250">
+                        <img loading="lazy" height="333" width="133" src="gallery/graphic_design/JavaScript%20Poster.webp" title="JavaScript Poster | A poster about JavaScript I made for a school project." alt="JavaScript Poster">
+                        <img loading="lazy" height="333" width="222" src="gallery/graphic_design/Hunters%20&%20Defenders%20poster.webp" title="Hunter & Defenders! Poster" alt="H&D! Poster">
+                        <img loading="lazy" height="333" width="187" src="gallery/graphic_design/Sun%20gradient.webp" title="Sunset Gradient" alt="Sunset Gradient">
+                        <img loading="lazy" height="333" width="187" src="gallery/graphic_design/Sky%20gradient.webp" title="Sky Gradient" alt="Sky Gradient">
+                        <img loading="lazy" height="333" width="187" src="gallery/graphic_design/Underwater%20gradient.webp" title="Underwater Gradient" alt="Underwater Gradient">
+                        <img loading="lazy" height="333" width="187" src="gallery/graphic_design/Nature%20gradient.webp" title="Nature Gradient" alt="Nature Gradient">
+                        <img loading="lazy" height="333" width="187" src="gallery/graphic_design/Abstract%20gradient.webp" title="Abstract Gradient" alt="Abstract Gradient">
+                        <img loading="lazy" height="333" width="592" src="gallery/graphic_design/Deep%20sea%20desktop%20wallpaper.webp" title="Deep Sea Desktop Wallpaper | A wallpaper I made for my Linux desktop." alt="Deep Sea Desktop Wallpaper">
                     </div>
                 </section>
                 <section id="fan-art">
                     <h2>Fan Art</h2>
                     <hr>
+                    <p>Want to expand this gallery? You can make fan arts of my characters and send them at <a href="mailto:bedrocklolgame@gmail.com">bedrocklolgame@gmail.com</a>!</p>
                     <div class="gallery">
                         <img loading="lazy" height="333" width="335" src="gallery/digital/sfw/My%20Fan%20Art.webp" title="First ever fan art! | Artwork made by Bryce Tan on Facebook!" alt="First ever fan art!">
                     </div>

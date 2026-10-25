@@ -1,5 +1,5 @@
 // copyright date
-const copyrightDate = document.getElementById("copyrightDate");
+const copyrightDate = document.getElementById('copyrightDate');
 copyrightDate.textContent = '2023-2026';
 
 // gallery switcher
@@ -12,78 +12,49 @@ const fanArt = document.getElementById('fan-art');
 const nsfwDigital = document.getElementById('nsfw-digital');
 const nsfwTraditional = document.getElementById('nsfw-traditional');
 
-function showGallery(number) {
-    if (number === 0) {
+const selectGallery = document.getElementById('galleries');
+
+function switchGallery(selected) {
+    if (selected === 0) {
         digital.style.display = 'block';
-        traditional.style.display = 'none';
-        photography.style.display = 'none';
-        imageManipulation.style.display = 'none';
-        graphicDesign.style.display = 'none';
-        fanArt.style.display = 'none';
-        nsfwDigital.style.display = 'none';
-        nsfwTraditional.style.display = 'none';
-    } else if (number === 1) {
-        digital.style.display = 'none';
+    } else if (selected === 1) {
         traditional.style.display = 'block';
-        photography.style.display = 'none';
-        imageManipulation.style.display = 'none';
-        graphicDesign.style.display = 'none';
-        fanArt.style.display = 'none';
-        nsfwDigital.style.display = 'none';
-        nsfwTraditional.style.display = 'none';
-    } else if (number === 2) {
-        digital.style.display = 'none';
-        traditional.style.display = 'none';
+    } else if (selected === 2) {
         photography.style.display = 'block';
-        imageManipulation.style.display = 'none';
-        graphicDesign.style.display = 'none';
-        fanArt.style.display = 'none';
-        nsfwDigital.style.display = 'none';
-        nsfwTraditional.style.display = 'none';
-    } else if (number === 3) {
-        digital.style.display = 'none';
-        traditional.style.display = 'none';
-        photography.style.display = 'none';
+    } else if (selected === 3) {
         imageManipulation.style.display = 'block';
-        graphicDesign.style.display = 'none';
-        fanArt.style.display = 'none';
-        nsfwDigital.style.display = 'none';
-        nsfwTraditional.style.display = 'none';
-    } else if (number === 4) {
-        digital.style.display = 'none';
-        traditional.style.display = 'none';
-        photography.style.display = 'none';
-        imageManipulation.style.display = 'none';
+    } else if (selected === 4) {
         graphicDesign.style.display = 'block';
-        fanArt.style.display = 'none';
-        nsfwDigital.style.display = 'none';
-        nsfwTraditional.style.display = 'none';
-    } else if (number === 5) {
-        digital.style.display = 'none';
-        traditional.style.display = 'none';
-        photography.style.display = 'none';
-        imageManipulation.style.display = 'none';
-        graphicDesign.style.display = 'none';
+    } else if (selected === 5) {
         fanArt.style.display = 'block';
-        nsfwDigital.style.display = 'none';
-        nsfwTraditional.style.display = 'none';
-    } else if (number === 6) {
-        digital.style.display = 'none';
-        traditional.style.display = 'none';
-        photography.style.display = 'none';
-        imageManipulation.style.display = 'none';
-        graphicDesign.style.display = 'none';
-        fanArt.style.display = 'none';
+    } else if (selected === 6) {
         nsfwDigital.style.display = 'block';
-        nsfwTraditional.style.display = 'none';
-    } else if (number === 7) {
-        digital.style.display = 'none';
-        traditional.style.display = 'none';
-        photography.style.display = 'none';
-        imageManipulation.style.display = 'none';
-        graphicDesign.style.display = 'none';
-        fanArt.style.display = 'none';
-        nsfwDigital.style.display = 'none';
+    } else if (selected === 7) {
         nsfwTraditional.style.display = 'block';
     }
 }
+
+function resetGalleries() {
+    digital.style.display = 'none';
+    traditional.style.display = 'none';
+    photography.style.display = 'none';
+    imageManipulation.style.display = 'none';
+    graphicDesign.style.display = 'none';
+    fanArt.style.display = 'none';
+    nsfwDigital.style.display = 'none';
+    nsfwTraditional.style.display = 'none';
+}
+
+function artGallery() {
+    let selectedValue = selectGallery.value;
+    resetGalleries();
+    switchGallery(parseInt(selectedValue));
+}
+
+selectGallery.addEventListener('change', () => {
+    artGallery();
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    artGallery();
+});
