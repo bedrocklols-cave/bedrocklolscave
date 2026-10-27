@@ -311,10 +311,10 @@ function about(mode) {
 }
 
 // menu
-shop = document.getelementbyid("shop");
-counter = document.getelementbyid("counter");
-settings = document.getelementbyid("settings");
-changelog = document.getelementbyid("changelog");
+shop = document.getElementById("shop");
+counter = document.getElementById("counter");
+settings = document.getElementById("settings");
+changelog = document.getElementById("changelog");
 
 function showSubMenu(submenu) {
     if (submenu === 'shop') {
