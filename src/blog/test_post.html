@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="robots" content="noindex, nofollow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="This is a test blog post.">
         <meta name="keywords" content="test, blog, update">
@@ -26,7 +27,7 @@
                 font-size: 2.4em;
             }
 
-            .img-label {
+            figcaption {
                 text-align: center;
             }
         </style>
@@ -35,7 +36,7 @@
         <div class="container">
             <a href="#sidebar" id="navbar-button" class="button" aria-label="jump-to-navbar">Navbar</a>
             <header>
-                <h1>Personal Blog!</h1>
+                <h1>Blog #1</h1>
             </header>
             <header id="logo">
                 <img src="/assets/website-logo.png" alt="bedrocklol's cave logo" height="88" width="88">
@@ -46,20 +47,24 @@
                     <h2>Test Post</h2>
                     <p>October 26, 2026 | Category: Update | Tags: test, blog, update</p>
                     <hr>
-                    <img src="/assets/Phoebe.webp" height="333" width="333" title="Picture of Phoebe" alt="Phoebe">
-                    <p class="img-label">Picture of Phoebe</p>
+                    <figure>
+                        <img src="/assets/Phoebe.webp" height="333" width="333" alt="Picture of Phoebe">
+                        <figcaption>Picture of Phoebe</figcaption>
+                    </figure>
                     <p>This is a test blog post. Ignore this lol</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
                     <ul>
                         <li>Phoebe</li>
                         <li>is</li>
-                        <li>yes</li>
+                        <li>cute!</li>
                     </ul>
+                    <code>console.log("Hello, World!");</code>
+                    <pre>This is a preformatted text.</pre>
                 </article>
             </main>
             <aside id="sidebar">
                 <img src="/assets/Phoebe.webp" alt="Phoebe portrait" class="portrait" height="150" width="150">
-                <img src="/assets/Molly-blinkie.gif" alt="Molly blinkie" class="portrait" height="22" width="150">
+                <img src="/assets/Phoebe-blinkie.gif" alt="Phoebe blinkie" class="portrait" height="22" width="150">
                 <hr style="border-style: solid; border-color: var(--border-main);">
                 <nav aria-label="navigator">
                     <h3>Navigator</h3>

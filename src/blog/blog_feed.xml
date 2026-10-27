@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+
+    <channel>
+        <title>bedrocklol's Personal Blog!</title>
+        <link>https://bedrocklolscave.neocities.org/blog</link>
+        <language>en</language>
+        <description>A feed for my blog posts.</description>
+        <item>
+            <title>Test Post</title>
+            <link>https://bedrocklolscave.neocities.org/blog/test_post</link>
+            <description>This is a test blog post. Ignore this lol...</description>
+            <pubDate>Mon, 26 Oct 2026 00:00:00 +0800</pubDate>
+            <guid isPermaLink="true">https://bedrocklolscave.neocities.org/blog/test_post</guid>
+        </item>
+        <!--
+        <item>
+            <title>Title here</title>
+            <link>https://bedrocklolscave.neocities.org/</link>
+            <description>Description here</description>
+            <pubDate>Mon, 1 Jan 2026 00:00:00 +0800</pubDate>
+            <enclosure url="" length="" type="" />
+            <guid isPermaLink="false">article-0000</guid>
+        </item>
+        -->
+    </channel>
+
+</rss>
