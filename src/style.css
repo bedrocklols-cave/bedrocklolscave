@@ -127,6 +127,14 @@ h1, aside h3 {
     border-radius: 8px;
 }
 
+h2 {
+    font-size: 1.64em;
+}
+
+main h3 {
+    font-size: 1.28em;
+}
+
 aside h3 {
     background-color: var(--bg-main);
     background-image: linear-gradient(to top, var(--bg-main), var(--bg-alt));
