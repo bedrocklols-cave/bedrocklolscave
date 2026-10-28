@@ -4,22 +4,32 @@
 
   <url>
        <loc>https://bedrocklolscave.neocities.org/</loc>
-       <lastmod>2026-10-22T04:45:25+00:00</lastmod>
+       <lastmod>2026-10-28T11:10:53+00:00</lastmod>
        <priority>1.0000</priority>
   </url>
   <url>
        <loc>https://bedrocklolscave.neocities.org/feed.xml</loc>
-       <lastmod>2026-10-14T10:48:24+00:00</lastmod>
+       <lastmod>2026-10-28T11:08:35+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://bedrocklolscave.neocities.org/games/molly_clicker</loc>
-       <lastmod>2026-10-22T04:45:23+00:00</lastmod>
+       <loc>https://bedrocklolscave.neocities.org/blog</loc>
+       <lastmod>2026-10-28T11:08:32+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://bedrocklolscave.neocities.org/changelog</loc>
-       <lastmod>2026-10-17T10:21:51+00:00</lastmod>
+       <loc>https://bedrocklolscave.neocities.org/gallery</loc>
+       <lastmod>2026-10-28T11:10:42+00:00</lastmod>
        <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://bedrocklolscave.neocities.org/games/molly_clicker</loc>
+       <lastmod>2026-10-28T11:10:43+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://bedrocklolscave.neocities.org/blog/blog_feed.xml</loc>
+       <lastmod>2026-10-28T11:08:31+00:00</lastmod>
+       <priority>0.5120</priority>
   </url>
 </urlset>
