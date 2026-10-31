@@ -54,23 +54,24 @@
                     <h2>Welcome to my Art Gallery!</h2>
                     <hr>
                     <p>If you're on a desktop, hover on an image to see its description. But, if you're on a mobile device, tap and hold the image, then click on the title to fully see its description.<br><br>Beware! Lots of images present in this page. If you have data connection, this WILL cost you a lot of time and money to load everything!<br><br>Content Warning: NSFW artworks ahead such as, but not limited to: Nudity, Lewd, etc.</p>
-                    <hr>
-                    <label for="galleries">Current Gallery:</label>
-                    <select name="galleries" id="galleries">
-                        <optgroup label="SFW">
-                            <option value="" selected disabled hidden>Choose</option>
-                            <option value="0">Digital</option>
-                            <option value="1">Traditional</option>
-                            <option value="2">Photography</option>
-                            <option value="3">Image Manipulation</option>
-                            <option value="4">Graphic Design</option>
-                            <option value="5">Fan Art</option>
-                        </optgroup>
-                        <optgroup label="NSFW">
-                            <option value="6">NSFW Digital</option>
-                            <option value="7">NSFW Traditional</option>
-                        </optgroup>
-                    </select>
+                    <div class="wrapper">
+                        <label for="galleries">Current Gallery:</label>
+                        <select name="galleries" id="galleries">
+                            <optgroup label="SFW">
+                                <option value="" selected disabled hidden>Choose</option>
+                                <option value="0">Digital</option>
+                                <option value="1">Traditional</option>
+                                <option value="2">Photography</option>
+                                <option value="3">Image Manipulation</option>
+                                <option value="4">Graphic Design</option>
+                                <option value="5">Fan Art</option>
+                            </optgroup>
+                            <optgroup label="NSFW">
+                                <option value="6">NSFW Digital</option>
+                                <option value="7">NSFW Traditional</option>
+                            </optgroup>
+                        </select>
+                    </div>
                 </section>
                 <section id="digital">
                     <h3>Digital</h3>
@@ -275,18 +276,6 @@
                         <li><a href="/projects.html">Projects</a></li>
                         <li><a href="/original_characters.html">Original Characters</a></li>
                     </ul>
-                    <p>Games</p>
-                    <ul>
-                        <li><a href="/games/molly_clicker.html">Molly Clicker</a></li>
-                    </ul>
-                    <p>External</p>
-                    <ul>
-                        <li><a href="https://www.youtube.com/@bedrocklolgame" target="_blank">YouTube</a></li>
-                        <li><a href="https://github.com/bedrocklols-cave" target="_blank">GitHub</a></li>
-                        <li><a href="https://bedrocklolscave.atabook.org/" target="_blank">Guestbook</a></li>
-                        <li><a href="https://ko-fi.com/bedrocklolgame" target="_blank">Ko-fi</a></li>
-                        <li><a href="https://neocities.org/site/bedrocklolscave" target="_blank">Neocities</a></li>
-                    </ul>
                 </nav>
             </aside>
             <footer>
@@ -302,5 +291,62 @@
                 </marquee>
             </footer>
         </div>
+        <script>
+            const digital = document.getElementById('digital');
+            const traditional = document.getElementById('traditional');
+            const photography = document.getElementById('photography');
+            const imageManipulation = document.getElementById('image-manipulation');
+            const graphicDesign = document.getElementById('graphic-design');
+            const fanArt = document.getElementById('fan-art');
+            const nsfwDigital = document.getElementById('nsfw-digital');
+            const nsfwTraditional = document.getElementById('nsfw-traditional');
+
+            const selectGallery = document.getElementById('galleries');
+
+            function switchGallery(selected) {
+                if (selected === 0) {
+                    digital.style.display = 'block';
+                } else if (selected === 1) {
+                    traditional.style.display = 'block';
+                } else if (selected === 2) {
+                    photography.style.display = 'block';
+                } else if (selected === 3) {
+                    imageManipulation.style.display = 'block';
+                } else if (selected === 4) {
+                    graphicDesign.style.display = 'block';
+                } else if (selected === 5) {
+                    fanArt.style.display = 'block';
+                } else if (selected === 6) {
+                    nsfwDigital.style.display = 'block';
+                } else if (selected === 7) {
+                    nsfwTraditional.style.display = 'block';
+                }
+            }
+
+            function resetGalleries() {
+                digital.style.display = 'none';
+                traditional.style.display = 'none';
+                photography.style.display = 'none';
+                imageManipulation.style.display = 'none';
+                graphicDesign.style.display = 'none';
+                fanArt.style.display = 'none';
+                nsfwDigital.style.display = 'none';
+                nsfwTraditional.style.display = 'none';
+            }
+
+            function artGallery() {
+                let selectedValue = selectGallery.value;
+                resetGalleries();
+                switchGallery(parseInt(selectedValue));
+            }
+
+            selectGallery.addEventListener('change', () => {
+                artGallery();
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                artGallery();
+            });
+        </script>
     </body>
 </html>
