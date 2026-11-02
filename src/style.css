@@ -168,6 +168,10 @@ a, img, marquee {
     color: var(--text-alt);
 }
 
+li {
+    margin: 4px 0;
+}
+
 nav li {
     margin: 8px 0;
     list-style-type: circle;
