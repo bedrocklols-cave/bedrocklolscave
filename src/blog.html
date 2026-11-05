@@ -7,7 +7,6 @@
         <meta name="description" content="bedrocklol's personal blog!">
         <title>Blog | bedrocklol's cave</title>
         <link rel="canonical" href="https://bedrocklolscave.neocities.org/blog">
-        <link rel="alternate" type="application/rss+xml" title="bedrocklol's Personal Blog" href="blog/blog_feed.xml">
         <link rel="stylesheet" type="text/css" href="/style.css">
         <link rel="icon" type="image/png" href="/favicon-96x96.png?v=20261026" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20261026" />
@@ -17,15 +16,12 @@
         <link rel="manifest" href="/site.webmanifest?v=20261026" />
         <script defer src="/script.js"></script>
         <style>
-            #blogs {
-                height: 800px;
-                overflow: auto;
+            main {
+                height: auto;
             }
 
-            @media screen and (max-width: 600px) {
-                #blogs {
-                    height: 500px;
-                }
+            #blogs li {
+                margin: 8px 0;
             }
         </style>
     </head>
@@ -42,11 +38,20 @@
                 <section>
                     <h2>Welcome to my Blog!</h2>
                     <hr>
-                    <p>This is where I sometimes write my honest thoughts about stuff, news updates, reviews, etc. I really appreciate it for taking your time to read these! Click on the links below to start reading a blog post.</p>
-                    <hr>
+                    <p>This is where I write and post my blogs. I really appreciate it for taking your time to read these! Click on the links below to start reading a blog post.</p>
+                </section>
+                <section>
                     <h3>All Blogs</h3>
+                    <hr>
                     <div class="wrapper" id="blogs">
-                        <script async src="https://rss.bloople.net/?url=https%3A%2F%2Fbedrocklolscave.neocities.org%2Fblog%2Fblog_feed.xml&showicon=true&forceutf8=true&type=js"></script>
+                        <label for="blogs">Link Format:</label>
+                        <ul>
+                            <li><a href="#">YYYY/MM/DD | [ title ] | [ tags ]</a></li>
+                        </ul>
+                        <hr>
+                        <ol reversed>
+                            <li><a href="blog/test_post.html">2026/10/26 | Test Post | Tags: test, blog, update</a></li>
+                        </ol>
                     </div>
                 </section>
             </main>
@@ -64,18 +69,6 @@
                         <li><a href="/gallery.html">Art Gallery</a></li>
                         <li><a href="/projects.html">Projects</a></li>
                         <li><a href="/original_characters.html">Original Characters</a></li>
-                    </ul>
-                    <p>Games</p>
-                    <ul>
-                        <li><a href="/games/molly_clicker.html">Molly Clicker</a></li>
-                    </ul>
-                    <p>External</p>
-                    <ul>
-                        <li><a href="https://www.youtube.com/@bedrocklolgame" target="_blank">YouTube</a></li>
-                        <li><a href="https://github.com/bedrocklols-cave" target="_blank">GitHub</a></li>
-                        <li><a href="https://bedrocklolscave.atabook.org/" target="_blank">Guestbook</a></li>
-                        <li><a href="https://ko-fi.com/bedrocklolgame" target="_blank">Ko-fi</a></li>
-                        <li><a href="https://neocities.org/site/bedrocklolscave" target="_blank">Neocities</a></li>
                     </ul>
                 </nav>
             </aside>
